@@ -87,28 +87,94 @@ document.getElementById("handleTinhThuNhap").onclick = function () {
   var ThuNhap = +document.getElementById("ThuNhap").value;
   var SoNguoi = +document.getElementById("SoNguoi").value;
   var ten = document.getElementById("ten").value;
-  var muc1 = 60e6;
-  var muc2 = 120e6;
-  var thueMuc1 = muc1 * 0.05;
-  var thueMuc2 = (ThuNhap - muc1) * 0.1;
+
+  var thueMuc1 = 0.05;
+  var thueMuc2 = 0.1;
+  var thueMuc3 = 0.15;
+  var thueMuc4 = 0.2;
+  var thueMuc5 = 0.25;
+  var thueMuc6 = 0.3;
+  var thueMuc7 = 0.35;
   var thue = 0;
-  if (ThuNhap < muc1) {
+  if (ThuNhap < 60e6) {
     alert("Số Tiền Thu Nhập Không Hợp Lệ");
     thue = ThuNhap;
-  } else if (ThuNhap >= muc1 && ThuNhap < muc2) {
-    thue = thueMuc1 + 50e6 + SoNguoi * 50000;
+  } else if (ThuNhap == 60e6) {
+    thue = ThuNhap * thueMuc1;
+  } else if (ThuNhap > 60e6 && ThuNhap <= 120e6) {
+    thu = ThuNhap * thueMuc2;
+  } else if (ThuNhap > 120e6 && ThuNhap <= 210e6) {
+    thue = ThuNhap * thueMuc3;
+  } else if (ThuNhap > 210e6 && ThuNhap <= 384e6) {
+    thue = ThuNhap * thueMuc4;
+  } else if (ThuNhap > 384e6 && ThuNhap <= 624e6) {
+    thue = ThuNhap * thueMuc5;
+  } else if (ThuNhap > 624e6 && ThuNhap <= 960e6) {
+    thue = ThuNhap * thueMuc6;
   } else {
-    thue = thueMuc1 + 100e6 + thueMuc2 + SoNguoi * 75000;
+    thue = ThuNhap * thueMuc7;
   }
-  ThuNhap = ThuNhap - thue;
+  var thunhapThue;
+  thunhapThue = ThuNhap - 4e6 + thue - SoNguoi * 1.6e6;
   if (ThuNhap < thue) {
     alert("Số Tiền Thu Nhập Không Hợp Lệ");
-    thue = ThuNhap;
+    thunhapThue = 0;
   }
   document.getElementById("result3").innerHTML =
     "Họ Tên: " +
     ten +
     ";" +
-    `Tiền Thuế Thu Nhập Cá Nhân: ${format.format(ThuNhap)}`;
+    `Tiền Thuế Thu Nhập Cá Nhân: ${format.format(thunhapThue)}`;
 };
+// Bài 4
+function Myfunction() {
+  var x = document.getElementById("DoiTuong").value;
+  if (x == "Nhà Dân")
+    document.getElementById("SoKetNoi").style.display = "none";
+  else document.getElementById("SoKetNoi").style.display = "inline-block";
+}
+var phihoadon;
+var phidichvu;
+var thueKenh;
 
+function TinhThueNhaDan() {
+  phidichvu = 20.5;
+  phihoadon = 4.5;
+  thueKenh = 7.5;
+  var sokenh = +document.getElementById("SoKenh").value;
+  return phidichvu + phihoadon + thueKenh * sokenh;
+}
+function TinhThueDoanhNghiep() {
+  phihoadon = 15;
+  thueKenh = 50;
+  var SoKetNoi = +document.getElementById("SoKetNoi").value;
+  var sokenh = +document.getElementById("SoKenh").value;
+  if (SoKetNoi <= 10) {
+    phidichvu = 75;
+  } else {
+    phidichvu = 75 + (SoKetNoi - 10) * 5;
+  }
+  return phidichvu + phihoadon + thueKenh * sokenh;
+}
+document.getElementById("handleTinhTienCap").onclick = function () {
+  var Tiencap;
+  var DoiTuong = document.getElementById("DoiTuong").value;
+  var MaKH = document.getElementById("MaKH").value;
+  var formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+  switch (DoiTuong) {
+    case "Nhà Dân":
+      Tiencap = TinhThueNhaDan();
+      break;
+    default:
+      Tiencap = TinhThueDoanhNghiep();
+  }
+  if (DoiTuong != "Nhà Dân" && DoiTuong != "Doanh Nghiệp") {
+    alert("Hãy chọn đối tượng");
+    Tiencap = 0;
+  }
+  document.getElementById("result4").innerHTML =
+    "Mã Khách Hàng : " + MaKH + ";" + `Tiền Cáp = ${formatter.format(Tiencap)}`;
+};

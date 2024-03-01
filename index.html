@@ -182,6 +182,65 @@
       ></div>
     </div>
     <br /><br /><br /><br />
+    <div class="container">
+      <h1>Bài 4: Tính Tiền Cáp</h1>
+      <div class="form-group" style="display: inline-block; width: 208px">
+        <label for=""></label>
+        <select
+          class="form-control"
+          name=""
+          id="DoiTuong"
+          onchange="Myfunction()"
+        >
+          <option>Chọn Loại Khách Hàng</option>
+          <option value="Nhà Dân">Nhà Dân</option>
+          <option value="Doanh Nghiệp">Doanh Nghiệp</option>
+        </select>
+      </div>
+      <div class="form-group ml-5" style="display: inline-block">
+        <input
+          type="text"
+          name=""
+          id="MaKH"
+          class="form-control"
+          placeholder="Nhập Mã Khách Hàng"
+          aria-describedby="helpId"
+        />
+      </div>
+      <div class="form-group ml-5" style="display: inline-block">
+        <input
+          type="number"
+          name=""
+          id="SoKenh"
+          class="form-control"
+          placeholder="Số Kênh Cao Cấp"
+          aria-describedby="helpId"
+        />
+      </div>
+      <br />
+      <div class="form-group" style="display: inline-block">
+        <input
+          type="number"
+          name=""
+          id="SoKetNoi"
+          class="form-control"
+          placeholder="Số Kênh Kết Nối"
+          aria-describedby="helpId"
+        />
+      </div>
+      <button
+        class="btn btn-primary"
+        id="handleTinhTienCap"
+        style="border-radius: 20px; display: block"
+      >
+        Tính Tiền Cáp
+      </button>
+      <div
+        class="alert alert-success mt-3"
+        id="result4"
+        style="height: 50px"
+      ></div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
