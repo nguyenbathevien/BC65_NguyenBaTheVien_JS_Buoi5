@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>BÀI 1</h1>
+      <div class="form-group" style="display: inline-block">
+        <label for=""></label>
+        <input
+          type="number"
+          name="diemchuan"
+          id="diemchuan"
+          class="form-control"
+          placeholder="Điểm Chuẩn"
+          aria-describedby="helpId"
+        />
+      </div>
+      <div class="form-group ml-5" style="display: inline-block; width: 208px">
+        <label for=""></label>
+        <select class="form-control" name="" id="khuvuc">
+          <option>Chọn Khu Vực</option>
+          <option value="X">X</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+        </select>
+      </div>
+      <div class="form-group ml-5" style="display: inline-block; width: 208px">
+        <label for=""></label>
+        <select class="form-control" name="" id="doituong">
+          <option>Chọn Đối Tượng</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+      <br />
+      <div class="form-group" style="display: inline-block">
+        <label for=""></label>
+        <input
+          type="number"
+          name=""
+          id="diem1"
+          class="form-control"
+          placeholder="Điểm môn thứ 1"
+          aria-describedby="helpId"
+        />
+      </div>
+      <div class="form-group ml-5" style="display: inline-block">
+        <label for=""></label>
+        <input
+          type="number"
+          name=""
+          id="diem2"
+          class="form-control"
+          placeholder="Điểm môn thứ 2"
+          aria-describedby="helpId"
+        />
+      </div>
+      <div class="form-group ml-5" style="display: inline-block">
+        <label for=""></label>
+        <input
+          type="number"
+          name=""
+          id="diem3"
+          class="form-control"
+          placeholder="Điểm môn thứ 3"
+          aria-describedby="helpId"
+        />
+      </div>
+      <br />
+      <button
+        class="btn btn-primary"
+        id="handleTinh"
+        style="border-radius: 20px"
+      >
+        Kết Quả
+      </button>
+      <div
+        class="alert alert-success mt-3"
+        id="result1"
+        style="height: 50px"
+      ></div>
+    </div>
+    <br /><br /><br /><br />
+    <div class="container">
+      <h1>Bài 2: Tính Tiền Điện</h1>
+      <div class="form-group" style="display: inline-block">
+        <input
+          type="text"
+          name=""
+          id="Hoten"
+          class="form-control"
+          placeholder="Nhập Họ Tên"
+          aria-describedby="helpId"
+        />
+      </div>
+      <div class="form-group ml-5" style="display: inline-block">
+        <input
+          type="number"
+          name=""
+          id="KW"
+          class="form-control"
+          placeholder="Nhập Số KW"
+          aria-describedby="helpId"
+        />
+      </div>
+      <button
+        class="btn btn-primary"
+        id="handleTinhThue"
+        style="border-radius: 20px; display: block"
+      >
+        Tính Tiền Điện
+      </button>
+      <div
+        class="alert alert-success mt-3"
+        id="result2"
+        style="height: 50px"
+      ></div>
+    </div>
+    <br /><br /><br /><br />
+    <div class="container">
+      <h1>Bài 3: Tính thuế thu nhập cá nhân</h1>
+      <div class="form-group" style="display: inline-block">
+        <input
+          type="text"
+          name=""
+          id="ten"
+          class="form-control"
+          placeholder="Nhập Họ Tên"
+          aria-describedby="helpId"
+        />
+      </div>
+      <div class="form-group ml-5" style="display: inline-block">
+        <input
+          type="number"
+          name=""
+          id="ThuNhap"
+          class="form-control"
+          placeholder="Tổng Thu Nhập Năm"
+          aria-describedby="helpId"
+        />
+      </div>
+      <div class="form-group ml-5" style="display: inline-block">
+        <input
+          type="number"
+          name=""
+          id="SoNguoi"
+          class="form-control"
+          placeholder="Số Người Phụ Thuộc"
+          aria-describedby="helpId"
+        />
+      </div>
+      <button
+        class="btn btn-primary"
+        id="handleTinhThuNhap"
+        style="border-radius: 20px; display: block"
+      >
+        Tính Thuế
+      </button>
+      <div
+        class="alert alert-success mt-3"
+        id="result3"
+        style="height: 50px"
+      ></div>
+    </div>
+    <br /><br /><br /><br />
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
